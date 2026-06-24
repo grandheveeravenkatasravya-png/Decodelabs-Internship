@@ -1,55 +1,78 @@
-# 🤖 Task 1 – Rule-Based AI Chatbot
+# 🚀 Task 2 – Data Classification Using AI (Spam Detection)
 
 ## 📌 Project Overview
 
-This project is a simple Rule-Based AI Chatbot developed using Python.
-It uses basic **if-else logic** to respond to user inputs and simulate a conversation.
+This project is part of the DecodeLabs Internship Program. It focuses on building a machine learning model to classify text messages as **Spam or Not Spam (Ham)**.
+
+The system uses a supervised learning approach to train a model on a dataset and predict new messages based on learned patterns.
 
 ## 🎯 Objective
 
-The goal of this project is to understand:
+* Load and understand dataset
+* Preprocess text data
+* Train a classification model
+* Test and evaluate model performance
 
-* Control flow in Python
-* Decision-making using conditions
-* Basics of Artificial Intelligence logic
+## 🧠 Model Used
+
+* Multinomial Naive Bayes (Supervised Learning)
 
 ## ⚙️ Features
 
-* 👋 Responds to greetings (Hi, Hello, Hey)
-* 💬 Answers simple user inputs
-* 🔁 Runs in a continuous loop
-* ❌ Stops when user types "exit"
+* 📂 Dataset loading and preview
+* 🧹 Text preprocessing using CountVectorizer
+* 🧠 Model training and testing
+* 📊 Accuracy calculation
+* 🔥 Confusion matrix visualization
+* 📈 Interactive graphs (Pie chart & Bar chart)
+* ✍️ User input for real-time prediction
+* 🕒 Prediction history tracking
 
 ## 🛠️ Technologies Used
 
-* Python (Core Programming)
-* Command Line Interface (CLI)
+* Python
+* Pandas
+* Scikit-learn
+* Streamlit
+* Plotly
 
 ## ▶️ How to Run the Project
 
-1. Make sure Python is installed
-2. Open terminal or command prompt
-3. Run the file:
+1. Install required libraries:
 
 ```bash
-python chatbot.py
+pip install streamlit pandas scikit-learn plotly
+```
+
+2. Run the application:
+
+```bash
+streamlit run app.py
 ```
 
 ## 📂 Project Structure
 
 ```
-Task1-Chatbot/
-   ├── decodeLabs_P1.py
+Task2-Spam-Detection/
+   ├── decodeLabs_P2.py
+   ├── sms.tsv
    ├── README.md
 ```
 
+## 📊 Output
+
+* Displays model accuracy
+* Shows confusion matrix
+* Visualizes spam vs ham distribution
+* Allows user to test custom messages
+
 ## 🚀 Future Improvements
 
-* Add more responses
-* Use NLP for better understanding
-* Add GUI interface
+* Use advanced ML models (SVM, Deep Learning)
+* Deploy application online
+* Improve UI design
+* Add file upload for bulk prediction
 
 ## 🙌 Conclusion
 
-This project is the foundation for building intelligent systems.
-It demonstrates how machines can simulate conversation using simple logic.
+This project demonstrates the fundamentals of supervised learning and data classification. It shows how machines can learn patterns from data and make intelligent predictions on new inputs.
