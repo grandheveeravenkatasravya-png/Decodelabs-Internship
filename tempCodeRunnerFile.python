@@ -1,0 +1,148 @@
+import cv2
+from PIL import Image
+from datetime import datetime
+
+while True:
+    user = input("You: ").lower()
+
+    # Exit
+    if user == "exit":
+        print("Bot: Goodbye 👋 Have a nice day!")
+        break
+
+    # Greetings
+    elif user in ["hi", "hello", "hey"]:
+        print("Bot: Hello! 😊 How can I help you?")
+
+    # Basic conversation
+    elif "how are you" in user:
+        print("Bot: I am doing great 😊")
+
+    elif "your name" in user:
+        print("Bot: I am your Smart Assistant 🤖")
+
+    elif "thank you" in user:
+        print("Bot: You're welcome 😊")
+
+    # Time & Date
+    elif "time" in user:
+        now = datetime.now()
+        print("Bot: Current time is", now.strftime("%H:%M:%S"))
+
+    elif "date" in user:
+        today = datetime.now()
+        print("Bot: Today's date is", today.strftime("%d-%m-%Y"))
+
+    # 📚 HISTORY
+    elif "history" in user:
+        print("Bot: History is the study of past events 🏛️")
+
+    elif "independence india" in user:
+        print("Bot: India got independence in 1947 🇮🇳")
+
+    elif "gandhi" in user:
+        print("Bot: Mahatma Gandhi is known as Father of the Nation ✨")
+
+    # 📊 ECONOMICS
+    elif "economics" in user:
+        print("Bot: Economics studies production, distribution, and consumption 📊")
+
+    elif "demand" in user:
+        print("Bot: Demand means willingness to buy a product at a price")
+
+    elif "supply" in user:
+        print("Bot: Supply means quantity available in market")
+
+    # 💰 FINANCE
+    elif "finance" in user:
+        print("Bot: Finance deals with money management 💰")
+
+    elif "stock market" in user:
+        print("Bot: Stock market is where shares are bought and sold 📈")
+
+    elif "investment" in user:
+        print("Bot: Investment means putting money to earn profit")
+
+    # 📚 COMPETITIVE EXAMS
+    elif "ssc" in user or "cgl" in user:
+        print("Bot: SSC CGL is a popular government exam 📚")
+
+    elif "upsc" in user:
+        print("Bot: UPSC is one of the toughest exams in India 💪")
+
+    elif "aptitude" in user:
+        print("Bot: Practice daily to improve aptitude skills 🧠")
+
+    # 🤖 AI
+    elif "ai" in user:
+        print("Bot: AI means machines performing tasks like humans 🤖")
+
+    elif "machine learning" in user:
+        print("Bot: Machine learning allows systems to learn from data")
+
+    elif "chatbot" in user:
+        print("Bot: A chatbot is a program that simulates conversation 💬")
+
+    # Study & Motivation
+    elif "study" in user or "exam" in user:
+        print("Bot: Study daily and revise regularly 📚")
+
+    elif "motivate" in user:
+        print("Bot: Believe in yourself 💪 You can do it!")
+
+    # Fun
+    elif "joke" in user:
+        print("Bot: 😂 Why did the computer go to doctor?")
+        print("Bot: Because it caught a virus!")
+
+    # 🎬 Movies
+    elif "movie" in user:
+        print("Bot: You can watch Interstellar, Avengers, or Bahubali 🎬")
+
+    # 🩺 Health
+    elif "headache" in user:
+        print("Bot: Drink water and take rest 🩺")
+
+    # 📷 Camera
+    elif "camera" in user:
+        print("Bot: Opening camera... Press 'q' to capture")
+
+        cap = cv2.VideoCapture(0)
+
+        while True:
+            ret, frame = cap.read()
+            cv2.imshow("Camera", frame)
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                cv2.imwrite("captured.jpg", frame)
+                break
+
+        cap.release()
+        cv2.destroyAllWindows()
+
+        print("Bot: Image captured successfully 📷")
+
+    # 🖼️ Upload Image
+    elif "upload" in user:
+        path = input("Enter image file path: ")
+
+        try:
+            img = Image.open(path)
+            print("Bot: Image loaded successfully 🖼️")
+            print("Bot: Image size:", img.size)
+        except:
+            print("Bot: Failed to open image ❌")
+
+    # Help
+    elif "help" in user:
+        print("Bot: You can ask about:")
+        print("- history, economics, finance")
+        print("- SSC, UPSC, aptitude")
+        print("- AI, machine learning")
+        print("- camera, upload image")
+        print("- time, date")
+        print("- exit")
+
+    # Default
+    else:
+        print("Bot: I didn't understand that 🤔 Try something else!")
